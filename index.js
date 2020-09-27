@@ -20,7 +20,7 @@ io.on('connection', socket => {
         if (badWords.some(x => data.toLowerCase().replace(/\d/gi, '').includes(x))) return socket.emit('badWords')
         const embed = new Discord.MessageEmbed()
         .setTitle('새 건의')
-        .setDescription(data)
+        .setDescription(`\`\`\`\n${data}\n\`\`\``)
         .setColor('RANDOM')
         .setTimestamp()
         client.channels.cache.get('759669885827022862').send(embed);

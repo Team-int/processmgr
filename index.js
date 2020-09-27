@@ -17,7 +17,7 @@ server.listen(4000);
 const io = require('socket.io')(server);
 io.on('connection', socket => {
     socket.on('new', data => {
-        if (badWords.some(x => data.toLowerCase().replace(/\d/gi, '').includes(x))) return socket.emit('badWords')
+        if (badWords.some(x => data.toLowerCase().replace(/\d/gi, '').replace(/ /gi, '').includes(x))) return socket.emit('badWords')
         const embed = new Discord.MessageEmbed()
         .setTitle('새 건의')
         .setDescription(`\`\`\`\n${data}\n\`\`\``)

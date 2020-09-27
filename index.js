@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const http = require('http');
 const fs = require('fs');
 const url = require('url');
-let badWords = ['씨발', '시발', '병신', '개새끼', '게새끼', '지랄', '관종', '새끼', '세끼', '섹스', 'fuck', 'sex']
+let badWords = ['씨발', '시발', '병신', '개새끼', '게새끼', '지랄', '관종', '새끼', '세끼', '섹스', 'fuck', 'sex', '바보']
 require('dotenv').config();
 const server = http.createServer((req, res) => {
     let parsed = url.parse(req.url, true);
